@@ -1,5 +1,7 @@
 extends StaticBody
 
+onready var Explosion = get_node_or_null("/root/Game/Explosions/")
+
 var speed = 0
 var y_range = 0
 
@@ -18,4 +20,6 @@ func _physics_process(_delta):
 
 
 func die():
+	Explosion.Boom()
 	queue_free()
+
